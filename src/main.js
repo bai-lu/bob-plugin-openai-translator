@@ -13,7 +13,7 @@ function translate(query, completion) {
         Authorization: `Bearer ${api_key}`,
     };
     let systemPrompt =
-        "You are a translation engine that can only translate text and cannot interpret it.";
+        "You are a translation engine.";
     let userPrompt = `translate from ${lang.langMap.get(query.detectFrom) || query.detectFrom
         } to ${lang.langMap.get(query.detectTo) || query.detectTo}`;
     if (query.detectTo === "wyw" || query.detectTo === "yue") {
