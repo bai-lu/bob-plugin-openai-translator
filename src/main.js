@@ -15,10 +15,7 @@ function translate(query, completion) {
     let systemPrompt =
         "You are a translation engine.";
     let userPrompt = `translate from ${lang.langMap.get(query.detectFrom) || query.detectFrom
-        } to ${lang.langMap.get(query.detectTo) || query.detectTo}`;
-    if (query.detectTo === "wyw" || query.detectTo === "yue") {
-        userPrompt = `翻译成${lang.langMap.get(query.detectTo) || query.detectTo}`;
-    }
+        } to ${lang.langMap.get(query.detectTo) || query.detectTo} 并用中文解析一下原文及句子成分`;
     if (
         query.detectFrom === "zh-Hans" ||
         query.detectFrom === "zh-Hant"
