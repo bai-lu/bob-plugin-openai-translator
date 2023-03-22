@@ -20,7 +20,6 @@ function translate(query, completion) {
         userPrompt = `翻译成${lang.langMap.get(query.detectTo) || query.detectTo}`;
     }
     if (
-        query.detectFrom === "wyw" ||
         query.detectFrom === "zh-Hans" ||
         query.detectFrom === "zh-Hant"
     ) {
@@ -28,9 +27,7 @@ function translate(query, completion) {
             userPrompt = "翻译成繁体白话文";
         } else if (query.detectTo === "zh-Hans") {
             userPrompt = "翻译成简体白话文";
-        } else if (query.detectTo === "yue") {
-            userPrompt = "翻译成粤语白话文";
-        }
+        };
     }
     if (query.detectFrom === query.detectTo) {
         systemPrompt =
